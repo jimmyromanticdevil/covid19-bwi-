@@ -10,6 +10,14 @@
 	z-index: 50;
 }
 
+@media screen and (min-width: 1200px) {
+	.header { 
+		padding: 0px 135px;
+	}
+}
+
+
+
 .header h1 {
 	float: left;
 	margin: 0;

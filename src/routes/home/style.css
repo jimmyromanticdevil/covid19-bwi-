@@ -3,3 +3,16 @@
 	min-height: 100%;
 	width: 100%;
 }
+
+@media screen and (min-width: 1200px) {
+	.home { 
+		padding: 80px 150px;
+	}
+}
+
+
+@media screen and (min-device-width: 1024px) and (max-width: 1080px) {
+	.home { 
+		padding: 80px 15px;
+	}
+}

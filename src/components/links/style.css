@@ -1,0 +1,29 @@
+.links {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid #2e343b;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.footer {
+    margin-top: 30px;
+ }
+ 
+ h3 {
+    font-size: 22px;
+ }
+ 
+ .footer p {
+    font-size: 15px;
+    line-height: 22px;
+ }
+ 
