@@ -6,7 +6,7 @@ import Footer from "../../components/footer"
 const Home = (props) => {
   return (
     <div class={style.home}>
-      <p>Data Terkini COVID-19 Di Banyuwangi Versi Cepat & Hemat Kuota</p>
+      <p>Data terkini COVID-19 di Banyuwangi versi cepat & hemat kuota.</p>
       <ContentStyle items={props.value} />
       <Footer/>
     </div>

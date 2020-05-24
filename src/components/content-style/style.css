@@ -14,7 +14,7 @@ article a {
 	background-color: rgb(239, 246, 255);
 	box-shadow: 0 4px 10px 1px rgba(57, 57, 57, 0.1);
   }
-  
+
   @keyframes rotating {
 	from {
 	  transform: rotate(0deg);
@@ -25,21 +25,39 @@ article a {
 	}
   }
   
-  h3 {
-	color: #292929;
-	font-size: 25px;
+  article h3 {
+	color: #673AB7;
+	font-size: 30px;
 	font-weight: 500;
 	line-height: 1.25;
 	margin: 0;
   }
   
-  
-  date,
   strong {
-	color: #666;
 	font-size: 14px;
-	font-weight: 500;
-	padding-right: 8px;
+	font-weight: 700;
+	padding-right: 26px;
+	opacity: 0.;
+  }
+
+  .sembuh {
+	color: #00A485;
+  }
+
+  .pantau {
+	color: #FFC052;
+  }
+
+  .dirawat {
+	color: #FF855D;
+  }
+
+  .meninggal {
+	color: #FF4C7C;
+  }
+  strong b {
+	font-size: 15px;
+	font-weight: 800;
   }
   
   span {
@@ -56,4 +74,5 @@ article a {
 	padding-top: 8px;
 	justify-content: space-between;
   }
+
   

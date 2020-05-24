@@ -12,12 +12,12 @@ const ContentStyle = (props) => {
           <article>
             <a>
               <h3>
-                {items.jumlah_odp} ODP <span>(ORANG DALAM PEMANTAUAN)</span>
+                {items.jumlah_odp} ODP <span>(Orang Dalam Pemantauan)</span>
               </h3>
               <section>
                 <div>
-                  <date>Sembuh: {items.jumlah_odp_selesai}</date>
-                  <strong>Pemantauan: {items.jumlah_odp_pantau}</strong>
+                  <strong class={style.sembuh}><b>{items.jumlah_odp_selesai}</b> sembuh</strong>
+                  <strong class={style.pantau}><b>{items.jumlah_odp_pantau}</b> dalam pemantauan</strong>
                 </div>
               </section>
             </a>
@@ -27,13 +27,13 @@ const ContentStyle = (props) => {
           <article>
             <a>
               <h3>
-                {items.jumlah_pdp} PDP <span>(PASIEN DALAM PENGAWASAN)</span>
+                {items.jumlah_pdp} PDP <span>(Pasien Dalam Pengawasan)</span>
               </h3>
               <section>
                 <div>
-                  <date>Sembuh: {items.jumlah_pdp_sembuh}</date>
-                  <strong>Dirawat: {items.jumlah_pdp_rawat}</strong>
-                  <strong>Meninggal: {items.jumlah_pdp_meninggal}</strong>
+                  <strong class={style.sembuh}><b>{items.jumlah_pdp_sembuh}</b> sembuh</strong>
+                  <strong class={style.dirawat}><b>{items.jumlah_pdp_rawat}</b> dirawat</strong>
+                  <strong class={style.meninggal}><b>{items.jumlah_pdp_meninggal}</b> meninggal</strong>
                 </div>
               </section>
             </a>
@@ -43,14 +43,13 @@ const ContentStyle = (props) => {
           <article>
             <a>
               <h3>
-                {items.jumlah_covid} COVID <span>(POSITIF COVID)</span>
+                {items.jumlah_covid} COVID <span>(Positif Covid)</span>
               </h3>
               <section>
                 <div>
-                  <date>Sembuh: {items.jumlah_covid_sembuh}</date>
-                  <strong>Dirawat: {items.jumlah_covid_rawat}</strong>
-                  <strong>Pengawasan: {items.jumlah_covid_isolasi}</strong>
-                  <strong>Meninggal: {items.jumlah_covid_meninggal}</strong>
+                  <strong class={style.sembuh}><b>{items.jumlah_covid_sembuh}</b> sembuh</strong>
+                  <strong class={style.dirawat}><b>{items.jumlah_covid_rawat}</b> dirawat</strong>
+                  <strong class={style.meninggal}><b>{items.jumlah_covid_meninggal}</b> meninggal</strong>
                 </div>
               </section>
             </a>
