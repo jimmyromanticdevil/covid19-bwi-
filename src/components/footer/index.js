@@ -1,6 +1,7 @@
+import { h } from 'preact';
 import style from "./style";
 
-const Footer = (props) => {
+export default function Footer() {
   return (
     <div class={style.footer}>
       <h3>Tentang Situs</h3>
@@ -30,4 +31,3 @@ const Footer = (props) => {
   );
 };
 
-export default Footer;

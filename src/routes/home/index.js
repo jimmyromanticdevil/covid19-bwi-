@@ -1,3 +1,4 @@
+import { h } from 'preact';
 import style from "./style";
 import ContentStyle from "../../components/content-style"
 import Footer from "../../components/footer"

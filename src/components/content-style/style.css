@@ -27,7 +27,7 @@ article a {
   
   h3 {
 	color: #292929;
-	font-size: 18px;
+	font-size: 25px;
 	font-weight: 500;
 	line-height: 1.25;
 	margin: 0;
@@ -37,7 +37,7 @@ article a {
   date,
   strong {
 	color: #666;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 	padding-right: 8px;
   }
