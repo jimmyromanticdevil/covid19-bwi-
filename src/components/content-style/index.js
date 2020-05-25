@@ -4,7 +4,8 @@ import LayoutGrid from "preact-material-components/LayoutGrid";
 import "preact-material-components/LayoutGrid/style.css";
 
 const ContentStyle = (props) => {
-  const items = props.items;
+  const {covid_pengawasan, covid_rawat, ...items} = props.items;
+  const total_pengawasan = +covid_pengawasan + +covid_rawat
   return (
     <LayoutGrid>
       <LayoutGrid.Inner>
@@ -12,12 +13,13 @@ const ContentStyle = (props) => {
           <article>
             <a>
               <h3>
-                {items.jumlah_odp} ODP <span>(Orang Dalam Pemantauan)</span>
+                {items.total_odp} ODP <span>(Orang Dalam Pemantauan)</span>
               </h3>
               <section>
                 <div>
-                  <strong class={style.sembuh}><b>{items.jumlah_odp_selesai}</b> sembuh</strong>
-                  <strong class={style.pantau}><b>{items.jumlah_odp_pantau}</b> dalam pemantauan</strong>
+                  <strong class={style.sembuh}>Sembuh <b>{items.odp_selesai}</b></strong>
+                  <strong class={style.pantau}>Pemantauan <b>{items.odp_proses}</b></strong>
+                  <strong class={style.meninggal}>Meninggal <b>{items.covid_meninggal}</b></strong>
                 </div>
               </section>
             </a>
@@ -27,13 +29,13 @@ const ContentStyle = (props) => {
           <article>
             <a>
               <h3>
-                {items.jumlah_pdp} PDP <span>(Pasien Dalam Pengawasan)</span>
+                {items.total_pdp} PDP <span>(Pasien Dalam Pengawasan)</span>
               </h3>
               <section>
                 <div>
-                  <strong class={style.sembuh}><b>{items.jumlah_pdp_sembuh}</b> sembuh</strong>
-                  <strong class={style.dirawat}><b>{items.jumlah_pdp_rawat}</b> dirawat</strong>
-                  <strong class={style.meninggal}><b>{items.jumlah_pdp_meninggal}</b> meninggal</strong>
+                  <strong class={style.sembuh}>Sembuh <b>{items.pdp_sembuh}</b></strong>
+                  <strong class={style.pengawasan}>Pengawasan <b>{items.pdp_rawat}</b></strong>
+                  <strong class={style.meninggal}>Meninggal <b>{items.pdp_meninggal}</b></strong>
                 </div>
               </section>
             </a>
@@ -43,13 +45,13 @@ const ContentStyle = (props) => {
           <article>
             <a>
               <h3>
-                {items.jumlah_covid} COVID <span>(Positif Covid)</span>
+                {items.total_covid} COVID <span>(Positif Covid)</span>
               </h3>
               <section>
                 <div>
-                  <strong class={style.sembuh}><b>{items.jumlah_covid_sembuh}</b> sembuh</strong>
-                  <strong class={style.pantau}><b>{items.jumlah_pengawasan}</b> dalam pengawasan</strong>
-                  <strong class={style.meninggal}><b>{items.jumlah_covid_meninggal}</b> meninggal</strong>
+                  <strong class={style.sembuh}>Sembuh <b>{items.covid_sembuh}</b></strong>
+                  <strong class={style.pengawasan}>Pengawasan <b>{total_pengawasan}</b></strong>
+                  <strong class={style.meninggal}>Meninggal <b>{items.covid_meninggal}</b></strong>
                 </div>
               </section>
             </a>
