@@ -7,7 +7,7 @@ export default function Footer() {
       <h3>Tentang Situs</h3>
       <p>
         Website yang menyajikan perkembangan COVID-19 di Banyuwangi dengan
-        penampilan ringan dan sederhana agar tidak menghamburkan kuota data.
+        penampilan ringan dan sederhana agar tidak menghamburkan kuota data. {" "}<br/>Kode sumber: <a href="https://github.com/jimmyromanticdevil/covid19-bwi">github.com/jimmyromanticdevil/covid19-bwi</a>.
       </p>
       <p>
         Sumber data:{" "}
