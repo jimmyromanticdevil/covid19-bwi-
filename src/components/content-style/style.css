@@ -77,15 +77,25 @@ article a {
 	justify-content: space-between;
   }
 
-  @media screen and (min-device-width: 360px) and (max-device-width: 640px) {
+  @media screen and (min-device-width: 224px) and (max-device-width: 320px) {
+	article h3  {
+		font-size: 28px;
+	}
+	article h3 span {
+		font-size: 10px;
+	}
 	article strong {
-		font-size: 13px;
-		padding-right: 11px;
+		font-size: 12px;
+		padding-right: 9px;
+	}
+	article strong b {
+		font-size: 12px;
 	}
   }
 
-  @media screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  @media screen and (min-device-width: 360px) and (max-device-width: 812px) {
   article strong {
+	font-size: 14px;
 	padding-right: 11px;
   }
 }
