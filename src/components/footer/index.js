@@ -12,7 +12,7 @@ export default function Footer() {
       <p>
         Sumber data:{" "}
         <a href="https://corona.banyuwangikab.go.id/">corona.banyuwangikab.go.id</a>.
-        Diperbarui setiap jam 12 malam.
+        Diperbarui setiap jam 7.10 malam.
       </p>
       <p>
         Untuk informasi lebih lengkap seputar covid di Indonesia:{" "}
