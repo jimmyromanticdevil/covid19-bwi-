@@ -97,7 +97,7 @@ function OtherLinks() {
 const Links = () => {
   return (
     <div>
-      <h3>Shortcut Info Di Banyuwangi</h3>
+      <h3>Shortcut Info Banyuwangi</h3>
       <Pemda />
       <br/>
       <h3>Pranala-pranala Penting</h3>

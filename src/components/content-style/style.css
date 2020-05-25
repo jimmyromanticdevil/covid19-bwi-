@@ -10,10 +10,6 @@ article a {
 	transition: all 0.3s ease;
   }
   
-  article a:hover {
-	background-color: rgb(239, 246, 255);
-	box-shadow: 0 4px 10px 1px rgba(57, 57, 57, 0.1);
-  }
 
   @keyframes rotating {
 	from {
@@ -27,16 +23,16 @@ article a {
   
   article h3 {
 	color: #673AB7;
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: 500;
 	line-height: 1.25;
 	margin: 0;
   }
   
-  strong {
+  article strong {
 	font-size: 14px;
 	font-weight: 700;
-	padding-right: 26px;
+	padding-right: 8px;
   }
 
   .sembuh {
@@ -54,11 +50,12 @@ article a {
   .meninggal {
 	color: #FF4C7C;
   }
-  strong b {
+  article strong b {
 	font-size: 15px;
 	font-weight: 800;
   }
   
+
   span {
 	color: #888;
 	font-size: 12px;
@@ -75,3 +72,12 @@ article a {
   }
 
   
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	article span { 
+	   display: none;
+	}
+	article strong {
+		padding-right: 10px;
+		font-size: 14px;
+	}
+}

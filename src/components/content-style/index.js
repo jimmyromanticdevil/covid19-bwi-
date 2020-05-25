@@ -48,7 +48,7 @@ const ContentStyle = (props) => {
               <section>
                 <div>
                   <strong class={style.sembuh}><b>{items.jumlah_covid_sembuh}</b> sembuh</strong>
-                  <strong class={style.dirawat}><b>{items.jumlah_covid_rawat}</b> dirawat</strong>
+                  <strong class={style.pantau}><b>{items.jumlah_pengawasan}</b> dalam pengawasan</strong>
                   <strong class={style.meninggal}><b>{items.jumlah_covid_meninggal}</b> meninggal</strong>
                 </div>
               </section>
