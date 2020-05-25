@@ -31,9 +31,15 @@ article a {
   
   article strong {
 	font-size: 14px;
-	font-weight: 700;
-	padding-right: 8px;
+	font-weight: 600;
+	padding-right: 20px;
   }
+
+  article strong b {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
 
   .sembuh {
 	color: #00A485;
@@ -43,7 +49,7 @@ article a {
 	color: #FFC052;
   }
 
-  .dirawat {
+  .pengawasan {
 	color: #FF855D;
   }
 
@@ -71,8 +77,46 @@ article a {
 	justify-content: space-between;
   }
 
+  @media screen and (min-device-width: 360px) and (max-device-width: 640px) {
+	article strong {
+		font-size: 13px;
+		padding-right: 11px;
+	}
+  }
+
+  @media screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  article strong {
+	padding-right: 11px;
+  }
+}
+
+  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	article strong {
+		font-size: 13px;
+		font-weight: 600;
+		padding-right: 9px;
+	}
+
+	article h3 {
+		color: #673AB7;
+		font-size: 32px;
+	}
+  }
   
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	article strong {
+		font-size: 13px;
+		font-weight: 600;
+		padding-right: 9px;
+	}
+
+	article h3 {
+		color: #673AB7;
+		font-size: 32px;
+	}
+  }
+
+  @media screen and (min-device-width: 768px) and (max-device-width: 1000px) {
 	article span { 
 	   display: none;
 	}
