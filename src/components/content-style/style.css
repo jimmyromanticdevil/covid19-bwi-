@@ -6,10 +6,15 @@ article a {
 	border-radius: 4px;
 	background-color: #fff;
 	text-decoration: none;
-	box-shadow: 0 2px 5px 0 rgba(57, 57, 57, 0.1);
+	box-shadow: 0 2px 5px 0 #3939391a;
 	transition: all 0.3s ease;
+	cursor:auto;
   }
   
+  article a:hover {
+	background-color: rgb(239, 246, 255);
+	box-shadow: 0 4px 10px 1px rgba(57, 57, 57, 0.1);
+  }
 
   @keyframes rotating {
 	from {
@@ -30,7 +35,7 @@ article a {
   }
   
   article strong {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 600;
 	padding-right: 20px;
   }
@@ -76,7 +81,7 @@ article a {
 	padding-top: 8px;
 	justify-content: space-between;
   }
-
+  
   @media screen and (min-device-width: 224px) and (max-device-width: 320px) {
 	article h3  {
 		font-size: 28px;
@@ -95,9 +100,12 @@ article a {
 
   @media screen and (min-device-width: 360px) and (max-device-width: 812px) {
   article strong {
-	font-size: 14px;
+	font-size: 13px;
 	padding-right: 11px;
   }
+  article strong b {
+	font-size: 14px;
+}
 }
 
   @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
