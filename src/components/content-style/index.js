@@ -46,7 +46,7 @@ class ContentStyle extends Component {
                 raised={true}
                 onClick={() => {
                   this.bar.MDComponent.show({
-                    message: `PDP ${items.total_pdp} (+${items.diff_total_pdp}) = S ${items.pdp_sembuh}(+${items.diff_pdp_sembuh}), P ${items.pdp_rawat}(+${items.diff_pdp_rawat}), M ${items.pdp_meninggal}(+${items.pdp_meninggal})`,
+                    message: `PDP ${items.total_pdp} (+${items.diff_total_pdp}) = S ${items.pdp_sembuh}(+${items.diff_pdp_sembuh}), P ${items.pdp_rawat}(+${items.diff_pdp_rawat}), M ${items.pdp_meninggal}(+${items.diff_pdp_meninggal})`,
                   });
                 }}
               >
@@ -75,7 +75,7 @@ class ContentStyle extends Component {
                 raised={true}
                 onClick={() => {
                   this.bar.MDComponent.show({
-                    message: `COVID ${items.total_covid} (+${items.diff_total_covid}) = S ${items.covid_sembuh}(+${items.diff_covid_sembuh}), P ${items.covid_pengawasan}(+${items.diff_covid_pengawasan}), M ${items.covid_meninggal}(+${items.covid_meninggal})`,
+                    message: `COVID ${items.total_covid} (+${items.diff_total_covid}) = S ${items.covid_sembuh}(+${items.diff_covid_sembuh}), P ${items.covid_pengawasan}(+${items.diff_covid_pengawasan}), M ${items.covid_meninggal}(+${items.diff_covid_meninggal})`,
                   });
                 }}
               >
