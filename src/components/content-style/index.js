@@ -5,7 +5,8 @@ import "preact-material-components/LayoutGrid/style.css";
 
 class ContentStyle extends Component {
   render() {
-    const items = this.props.items;
+    const {covid_pengawasan, covid_rawat, ...items} = this.props.items;
+    const total_pengawasan = +covid_pengawasan + +covid_rawat;
     return (
       <LayoutGrid>
         <LayoutGrid.Inner>
@@ -65,7 +66,7 @@ class ContentStyle extends Component {
                       Sembuh {items.covid_sembuh} {items.diff_covid_sembuh}
                     </strong>
                     <strong class={style.pengawasan}>
-                      Pengawasan {items.covid_pengawasan} {items.diff_covid_pengawasan}
+                      Pengawasan {total_pengawasan} {items.diff_covid_rawat}
                     </strong>
                     <strong class={style.meninggal}>
                       Meninggal {items.covid_meninggal} {items.diff_covid_meninggal}
