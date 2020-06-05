@@ -61,6 +61,25 @@ function Pemda() {
   );
 }
 
+function BisnisBwi() {
+  return (
+    <LayoutGrid>
+      <LayoutGrid.Inner>
+        <LayoutGrid.Cell cols="4">
+          <a
+            class={style.link}
+            href="https://drive.google.com/file/d/1N8VAHo0URkTY1XaoXNN__yujXHnYFCgN/view?fbclid=IwAR0ZId6qKKfaM9BY0qIqiENSmyAr6_LlyBWWw4NH6rXbZCSWxh_T1BQA0rk"
+          >
+            <div class={style.links}>
+               SOP Restoran / Rumah Makan
+            </div>
+          </a>
+        </LayoutGrid.Cell>
+      </LayoutGrid.Inner>
+    </LayoutGrid>
+  );
+}
+
 function OtherLinks() {
   return (
     <LayoutGrid>
@@ -99,6 +118,9 @@ const Links = () => {
     <div>
       <h3>Shortcut Info Banyuwangi</h3>
       <Pemda />
+      <br/>
+      <h3>Bisnis di Banyuwangi</h3>
+      <BisnisBwi />
       <br/>
       <h3>Pranala-pranala Penting</h3>
       <OtherLinks/>

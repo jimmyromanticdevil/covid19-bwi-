@@ -35,14 +35,9 @@ article a {
   }
   
   article strong {
-	font-size: 13px;
+	font-size: 12px;
 	font-weight: 600;
-	padding-right: 20px;
-  }
-
-  article strong b {
-    font-size: 16px;
-    font-weight: 800;
+	padding-right: 10px;
   }
 
 
@@ -61,15 +56,10 @@ article a {
   .meninggal {
 	color: #FF4C7C;
   }
-  article strong b {
-	font-size: 15px;
-	font-weight: 800;
-  }
-  
 
   span {
-	color: #888;
-	font-size: 12px;
+	color: #673AB7;
+	font-size: 18px;
   }
   
   article {
@@ -93,24 +83,18 @@ article a {
 		font-size: 12px;
 		padding-right: 9px;
 	}
-	article strong b {
-		font-size: 12px;
-	}
   }
 
-  @media screen and (min-device-width: 360px) and (max-device-width: 812px) {
+  @media screen and (min-device-width: 375px) and (max-device-width: 400px) {
   article strong {
-	font-size: 13px;
-	padding-right: 11px;
+	font-size: 10px;
+	padding-right: 10px;
   }
-  article strong b {
-	font-size: 14px;
 }
-}
-
+  
   @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
 	article strong {
-		font-size: 13px;
+		font-size: 10px;
 		font-weight: 600;
 		padding-right: 9px;
 	}
@@ -121,25 +105,13 @@ article a {
 	}
   }
   
-  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-	article strong {
-		font-size: 13px;
-		font-weight: 600;
-		padding-right: 9px;
-	}
-
-	article h3 {
-		color: #673AB7;
-		font-size: 32px;
-	}
-  }
 
   @media screen and (min-device-width: 768px) and (max-device-width: 1000px) {
 	article span { 
 	   display: none;
 	}
 	article strong {
-		padding-right: 10px;
-		font-size: 14px;
+		padding-right: 9px;
+		font-size: 11px;
 	}
 }

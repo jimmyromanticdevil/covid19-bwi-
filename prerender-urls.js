@@ -31,7 +31,6 @@ async function updateData(responses, response_rest) {
     body: JSON.stringify({ covid_cases: responses }),
   });
   let resp = await response.json();
-  console.log(resp);
   return true || {};
 }
 
@@ -64,9 +63,11 @@ async function readData(responses) {
   var myObj = {};
   for (let [key, value] of Object.entries(responses)) {
     if (key != "last_updated") {
-      myObj[`diff_${key}`] = value - yesterdayCase.covid_cases[key];
+      let diff = value - yesterdayCase.covid_cases[key];
+      myObj[`diff_${key}`] = (diff? `(+${diff})` : "")
     }
   }
+  console.log(myObj)
   return myObj
 }
 

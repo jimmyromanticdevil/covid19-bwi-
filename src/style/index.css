@@ -24,7 +24,3 @@ html, body {
 	.mdc-layout-grid {
 		 padding: 0px !important; 
 	}
-
-	.mdc-snackbar__text {
-		font-size: 14px !important;
-	  }
