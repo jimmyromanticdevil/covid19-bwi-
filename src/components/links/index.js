@@ -10,7 +10,8 @@ function Pemda() {
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://corona.banyuwangikab.go.id/#peta-sebaran"
+            href="https://rebrand.ly/covid-19bwi-peta-sebaran"
+            title="Peta sebaran covid di Banyuwangi"
           >
             <div class={style.links}>Peta sebaran covid di Banyuwangi</div>
           </a>
@@ -18,42 +19,46 @@ function Pemda() {
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://corona.banyuwangikab.go.id/#kesehatan"
+            href="https://rebrand.ly/covid-19bwi-fasilitas-kesehatan"
+            title="Fasilitas Kesehatan & Rumah Isolasi di banyuwangi"
           >
-            <div class={style.links}>
-              Fasilitas Kesehatan & Rumah Isolasi
-            </div>
+            <div class={style.links}>Fasilitas Kesehatan & Rumah Isolasi</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://corona.banyuwangikab.go.id/front/kebijakan"
+            href="https://rebrand.ly/covid-19bwi-kebijakan"
+            title="Kebijakan pemerintah daerah dan pusat Banyuwangi"
           >
-            <div class={style.links}>
-              Kebijakan pemerintah daerah dan pusat
-            </div>
+            <div class={style.links}>Kebijakan pemerintah daerah dan pusat</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://corona.banyuwangikab.go.id/pelaporanbansosbanyuwangi"
+            href="https://rebrand.ly/covid-19bwi-bansos"
+            title="Pelaporan online bansos COVID-19 Banyuwangi"
           >
             <div class={style.links}>Pelaporan online bansos COVID19</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
-          <a class={style.link} href="tel:112">
+          <a
+            class={style.link}
+            href="tel:112"
+            title="Call center 112 banyuwangi"
+          >
             <div class={style.links}>Call center 112</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://web.facebook.com/InformasiTentangBanyuwangi"
+            href="https://rebrand.ly/covid-19bwi-infobwi"
+            title="Facebook Informasi Banyuwangi"
           >
-            <div class={style.links}>Informasi Banyuwangi di Facebook</div>
+            <div class={style.links}>Facebook Informasi Banyuwangi</div>
           </a>
         </LayoutGrid.Cell>
       </LayoutGrid.Inner>
@@ -65,34 +70,31 @@ function SOP() {
   return (
     <LayoutGrid>
       <LayoutGrid.Inner>
-      <LayoutGrid.Cell cols="4">
+        <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://drive.google.com/file/d/1NPXcwliZnXqskjB2KNu6Ck-GnrYTXVjz/view?usp=drivesdk"
+            href="https://rebrand.ly/sop-pariwisata"
+            title="New normal SOP destinasi wisata di banyuwangi"
           >
-            <div class={style.links}>
-               Destinasi Wisata
-            </div>
+            <div class={style.links}>Destinasi Wisata</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://drive.google.com/file/d/1NHt8m2iyaXA8HiKuwCVhQcN83Osr8Hvl/view?fbclid=IwAR1tDG9ZopPuDl1-0WKG2d_EMw0NhqEHgZiGwHX6neyNdm67uuLOxIa_kGc"
+            href="https://rebrand.ly/sop-hotel-homestay"
+            title="New normal SOP hotel dan homestay di banyuwangi"
           >
-            <div class={style.links}>
-               Hotel / Homestay
-            </div>
+            <div class={style.links}>Hotel / Homestay</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://drive.google.com/file/d/1N8VAHo0URkTY1XaoXNN__yujXHnYFCgN/view?fbclid=IwAR0ZId6qKKfaM9BY0qIqiENSmyAr6_LlyBWWw4NH6rXbZCSWxh_T1BQA0rk"
+            href="https://rebrand.ly/sop-restoran-rumah-makan"
+            title="New normal SOP restoran dan rumah makan di banyuwangi"
           >
-            <div class={style.links}>
-               Restoran / Rumah Makan
-            </div>
+            <div class={style.links}>Restoran / Rumah Makan</div>
           </a>
         </LayoutGrid.Cell>
       </LayoutGrid.Inner>
@@ -107,25 +109,25 @@ function OtherLinks() {
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
-            href="https://covid19.go.id/"
+            href="https://rebrand.ly/situs-covid-pemerintah"
+            title="Situs resmi pemerintah indonesia untuk covid-19"
           >
-            <div class={style.links}>
-               Situs Resmi Pemerintah untuk COVID-19
-            </div>
+            <div class={style.links}>Situs Resmi Pemerintah untuk COVID-19</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
-          <a class={style.link} href="https://kawalcovid19.id/">
+          <a
+            class={style.link}
+            href="https://rebrand.ly/kawalcovid"
+            title="Kawalcovid - Informasi Terkini COVID-19 di Indonesia"
+          >
             <div class={style.links}>
               Informasi Terkini COVID-19 di Indonesia
             </div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
-          <a
-            class={style.link}
-            href="https://turnbackhoax.id/2020/02/06/kompilasi-post-periksa-fakta-mafindo-berkaitan-dengan-virus-corona/"
-          >
+          <a class={style.link} href="https://rebrand.ly/turnbackhoax-id"  title="Kompilasi TurnBackHoax COVID-19">
             <div class={style.links}>Kompilasi TurnBackHoax COVID-19</div>
           </a>
         </LayoutGrid.Cell>
@@ -138,12 +140,12 @@ const Links = () => {
     <div>
       <h3>Shortcut Info Banyuwangi</h3>
       <Pemda />
-      <br/>
+      <br />
       <h3>SOP Bisnis Banyuwangi</h3>
       <SOP />
-      <br/>
+      <br />
       <h3>Pranala-pranala Penting</h3>
-      <OtherLinks/>
+      <OtherLinks />
     </div>
   );
 };
