@@ -3,7 +3,7 @@ import style from './style.css';
 
 const Header = () => (
 	<header class={style.header}>
-		<h1>COVID19BWI</h1>
+		<h1>COVID-19 BWI</h1>
 	</header>
 );
 
