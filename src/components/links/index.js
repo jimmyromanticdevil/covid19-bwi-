@@ -61,17 +61,37 @@ function Pemda() {
   );
 }
 
-function BisnisBwi() {
+function SOP() {
   return (
     <LayoutGrid>
       <LayoutGrid.Inner>
+      <LayoutGrid.Cell cols="4">
+          <a
+            class={style.link}
+            href="https://drive.google.com/file/d/1NPXcwliZnXqskjB2KNu6Ck-GnrYTXVjz/view?usp=drivesdk"
+          >
+            <div class={style.links}>
+               Destinasi Wisata
+            </div>
+          </a>
+        </LayoutGrid.Cell>
+        <LayoutGrid.Cell cols="4">
+          <a
+            class={style.link}
+            href="https://drive.google.com/file/d/1NHt8m2iyaXA8HiKuwCVhQcN83Osr8Hvl/view?fbclid=IwAR1tDG9ZopPuDl1-0WKG2d_EMw0NhqEHgZiGwHX6neyNdm67uuLOxIa_kGc"
+          >
+            <div class={style.links}>
+               Hotel / Homestay
+            </div>
+          </a>
+        </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">
           <a
             class={style.link}
             href="https://drive.google.com/file/d/1N8VAHo0URkTY1XaoXNN__yujXHnYFCgN/view?fbclid=IwAR0ZId6qKKfaM9BY0qIqiENSmyAr6_LlyBWWw4NH6rXbZCSWxh_T1BQA0rk"
           >
             <div class={style.links}>
-               SOP Restoran / Rumah Makan
+               Restoran / Rumah Makan
             </div>
           </a>
         </LayoutGrid.Cell>
@@ -119,8 +139,8 @@ const Links = () => {
       <h3>Shortcut Info Banyuwangi</h3>
       <Pemda />
       <br/>
-      <h3>Bisnis di Banyuwangi</h3>
-      <BisnisBwi />
+      <h3>SOP Bisnis Banyuwangi</h3>
+      <SOP />
       <br/>
       <h3>Pranala-pranala Penting</h3>
       <OtherLinks/>
