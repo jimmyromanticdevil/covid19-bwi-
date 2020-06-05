@@ -10,7 +10,7 @@ const coronaBwiUrl = "https://corona.banyuwangikab.go.id/api/covid19";
 
 async function writeData(responses) {
   const url = `${domain}/rest/case`;
-  const response = await fetch(url, {
+  fetch(url, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -19,19 +19,15 @@ async function writeData(responses) {
     }),
     json: true,
   });
-  let resp = await response.json();
-  return true || {};
 }
 
 async function updateData(responses, response_rest) {
   const url = `${domain}/rest/case/${response_rest._id}`;
-  const response = await fetch(url, {
+  fetch(url, {
     method: "PUT",
     headers: headers,
     body: JSON.stringify({ covid_cases: responses }),
   });
-  let resp = await response.json();
-  return true || {};
 }
 
 async function readData(responses) {
@@ -41,16 +37,19 @@ async function readData(responses) {
   });
 
   let getAllCases = await fetchAllCases.json();
-  const yesterday = ((d) => new Date(d.setDate(d.getDate() - 2)))(new Date())
+  const yesterday = ((d) => new Date(d.setDate(d.getDate() - 1)))(new Date())
     .toISOString()
     .slice(0, 10);
 
   let yesterdayCase = getAllCases.find(
     (el) => el.covid_cases.last_updated === yesterday
   );
+  console.log(yesterdayCase)
   let todayCase = getAllCases.find(
     (el) => el.covid_cases.last_updated === responses.last_updated
   );
+  console.log(todayCase)
+
   if (todayCase) {
     console.log("update data");
     // first we need to update the data because gov API doesn't work like normal API
@@ -60,15 +59,15 @@ async function readData(responses) {
     writeData(responses);
   }
 
-  var myObj = {};
+  var newObj = {};
   for (let [key, value] of Object.entries(responses)) {
     if (key != "last_updated") {
       let diff = value - yesterdayCase.covid_cases[key];
-      myObj[`diff_${key}`] = (diff? `(+${diff})` : "")
+      newObj[`diff_${key}`] = (diff? `(+${diff})` : "")
     }
   }
-  console.log(myObj)
-  return myObj
+  console.log(newObj)
+  return newObj
 }
 
 module.exports = async function () {
