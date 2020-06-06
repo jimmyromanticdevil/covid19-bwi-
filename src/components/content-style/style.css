@@ -32,7 +32,7 @@ article a {
   
   article strong {
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 800;
 	padding-right: 10px;
   }
 
@@ -59,6 +59,7 @@ article a {
   span {
 	color: #673AB7;
 	font-size: 18px;
+	font-weight: 800;
   }
   
   article {
