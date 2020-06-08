@@ -44,11 +44,11 @@ async function readData(responses) {
   let yesterdayCase = getAllCases.find(
     (el) => el.covid_cases.last_updated === yesterday
   );
-  console.log(yesterdayCase)
+  console.log(yesterdayCase);
   let todayCase = getAllCases.find(
     (el) => el.covid_cases.last_updated === responses.last_updated
   );
-  console.log(todayCase)
+  console.log(todayCase);
 
   if (todayCase) {
     console.log("update data");
@@ -63,11 +63,11 @@ async function readData(responses) {
   for (let [key, value] of Object.entries(responses)) {
     if (key != "last_updated") {
       let diff = value - yesterdayCase.covid_cases[key];
-      newObj[`diff_${key}`] = (diff? `(+${diff})` : "")
+      newObj[`diff_${key}`] = diff ? diff < 0 ? `(${diff})` : `(+${diff})` : "";
     }
   }
-  console.log(newObj)
-  return newObj
+  console.log(newObj);
+  return newObj;
 }
 
 module.exports = async function () {
@@ -76,7 +76,7 @@ module.exports = async function () {
   const response = await fetch(coronaBwiUrl);
   let resp = await response.json();
   let result = await readData(resp.data);
-  const data = {...result, ...resp.data}
+  const data = { ...result, ...resp.data };
   pages.push({
     url: "/",
     title: "Data terkini COVID-19 di Banyuwangi versi cepat & hemat kuota.",
