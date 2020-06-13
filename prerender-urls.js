@@ -88,7 +88,6 @@ async function readData(responses) {
 }
 
 module.exports = async function () {
-  //sorry guys this is hardcode, because I got deadline :p will fix it later.
   const pages = [];
   const response = await fetch(coronaBwiUrl);
   let resp = await response.json();
