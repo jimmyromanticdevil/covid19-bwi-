@@ -8,66 +8,83 @@ const headers = {
 const domain = "https://covid19bwi-2d80.restdb.io";
 const coronaBwiUrl = "https://corona.banyuwangikab.go.id/api/covid19";
 
-async function writeData(responses) {
-  const url = `${domain}/rest/case`;
-  fetch(url, {
-    method: "POST",
+let fetchData = async (data) => {
+  let options = {
+    method: data.method,
     headers: headers,
+    json: true,
+    ...(data.body && { body: data.body }),
+  };
+  let response = await fetch(data.url, options);
+  return data.return_type == "json" ? await response.json() : true;
+};
+
+async function writeToDatabase(responses) {
+  let writeOpt = {
+    url: `${domain}/rest/case`,
+    method: "POST",
     body: JSON.stringify({
       covid_cases: responses,
       last_updated: responses.last_updated,
     }),
-    json: true,
-  });
+    return_type: "bol",
+  };
+  return await fetchData(writeOpt);
 }
 
-async function updateData(responses, response_rest) {
-  const url = `${domain}/rest/case/${response_rest._id}`;
-  fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: JSON.stringify({ covid_cases: responses }),
-  });
+async function updateToDatabase(responses, todayDate) {
+  const checkUpdateOpt = {
+    url: `${domain}/rest/case?q={"last_updated":"${todayDate}"}`,
+    method: "GET",
+    return_type: "json",
+  };
+  let resultCheck = await fetchData(checkUpdateOpt);
+  if (resultCheck.length > 0) {
+    console.log("[*] Update");
+    const UpdateOpt = {
+      url: `${domain}/rest/case/${resultCheck[0]._id}`,
+      method: "PUT",
+      body: JSON.stringify({ covid_cases: responses }),
+      return_type: "bol",
+    };
+    return await fetchData(UpdateOpt);
+  }
+  console.log("[*] Update New Data");
+  return await writeToDatabase(responses);
 }
 
 async function readData(responses) {
-  const fetchAllCases = await fetch(`${domain}/rest/case`, {
-    method: "GET",
-    headers: headers,
-  });
+  let todayDate = new Date().toJSON().slice(0, 10);
+  const caseResult = await updateToDatabase(responses, todayDate);
+  if (caseResult) {
+    const allOpt = {
+      url: `${domain}/rest/case`,
+      method: "GET",
+      return_type: "json",
+    };
+    let getAllCases = await fetchData(allOpt);
+    const yesterday = ((d) => new Date(d.setDate(d.getDate() - 1)))(new Date())
+      .toISOString()
+      .slice(0, 10);
 
-  let getAllCases = await fetchAllCases.json();
-  const yesterday = ((d) => new Date(d.setDate(d.getDate() - 1)))(new Date())
-    .toISOString()
-    .slice(0, 10);
-
-  let yesterdayCase = getAllCases.find(
-    (el) => el.covid_cases.last_updated === yesterday
-  );
-  console.log(yesterdayCase);
-  let todayCase = getAllCases.find(
-    (el) => el.covid_cases.last_updated === responses.last_updated
-  );
-  console.log(todayCase);
-
-  if (todayCase) {
-    console.log("update data");
-    // first we need to update the data because gov API doesn't work like normal API
-    updateData(responses, todayCase);
-  } else {
-    console.log("insert data");
-    writeData(responses);
-  }
-
-  var newObj = {};
-  for (let [key, value] of Object.entries(responses)) {
-    if (key != "last_updated") {
-      let diff = value - yesterdayCase.covid_cases[key];
-      newObj[`diff_${key}`] = diff ? diff < 0 ? `(${diff})` : `(+${diff})` : "";
+    let yesterdayCase = getAllCases.find(
+      (el) => el.covid_cases.last_updated === yesterday
+    );
+    console.log(yesterdayCase);
+    var newObj = {};
+    for (let [key, value] of Object.entries(responses)) {
+      if (key != "last_updated") {
+        let diff = value - yesterdayCase.covid_cases[key];
+        newObj[`diff_${key}`] = diff
+          ? diff < 0
+            ? `(${diff})`
+            : `(+${diff})`
+          : "";
+      }
     }
+    console.log(newObj);
+    return newObj;
   }
-  console.log(newObj);
-  return newObj;
 }
 
 module.exports = async function () {
@@ -76,7 +93,7 @@ module.exports = async function () {
   const response = await fetch(coronaBwiUrl);
   let resp = await response.json();
   let result = await readData(resp.data);
-  const data = { ...result, ...resp.data };
+  let data = { ...result, ...resp.data };
   pages.push({
     url: "/",
     title: "Data terkini COVID-19 di Banyuwangi versi cepat & hemat kuota.",
