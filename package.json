@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "build": "preact build --prerenderUrls ./prerender-urls.js --template src/template.html",
+    "build": "preact build --prerenderUrls ./prerender-urls.js --template src/template.html --config --brotli",
     "serve": "sirv build --cors --single",
-    "dev": "preact watch --prerenderUrls ./prerender-urls.js --template src/template.html",
+    "dev": "preact watch --prerenderUrls ./prerender-urls.js --template src/template.html --brotli",
     "lint": "eslint src",
     "test": "jest"
   },
@@ -25,6 +25,7 @@
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
     "preact-cli": "^3.0.0-rc.6",
+    "preact-cli-plugin-netlify": "^1.5.0",
     "preact-render-spy": "^1.2.1",
     "sirv-cli": "^0.4.5"
   },
