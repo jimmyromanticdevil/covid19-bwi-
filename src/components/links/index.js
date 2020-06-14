@@ -13,7 +13,7 @@ function Pemda() {
             href="https://corona.banyuwangikab.go.id/#peta-sebaran"
             title="Peta sebaran covid di Banyuwangi"
           >
-            <div class={style.links}>Peta sebaran covid di Banyuwangi</div>
+            <div class={style.links}>Peta sebaran covid</div>
           </a>
         </LayoutGrid.Cell>
         <LayoutGrid.Cell cols="4">

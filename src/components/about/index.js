@@ -1,9 +1,9 @@
 import { h } from 'preact';
 import style from "./style";
 
-export default function Footer() {
+export default function About() {
   return (
-    <div class={style.footer}>
+    <div class={style.about}>
       <h3>Tentang Situs</h3>
       <p>
         Website yang menyajikan perkembangan COVID-19 di Banyuwangi dengan
