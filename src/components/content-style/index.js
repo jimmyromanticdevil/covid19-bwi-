@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import { Component } from "preact";
 import style from "./style";
 import LayoutGrid from "preact-material-components/LayoutGrid";
 import "preact-material-components/LayoutGrid/style.css";
@@ -7,8 +7,6 @@ class ContentStyle extends Component {
   render() {
     const {covid_pengawasan, covid_rawat, ...items} = this.props.items;
     const total_pengawasan = +covid_pengawasan + +covid_rawat;
-    //there's no odp_meninggal on API result, so must add it manually. gov data really confusing. totally fucked up
-    const odp_meninggal = 2
     return (
       <LayoutGrid>
         <LayoutGrid.Inner>
@@ -27,7 +25,7 @@ class ContentStyle extends Component {
                       Pemantauan {items.odp_proses} {items.diff_odp_proses}
                     </strong>
                     <strong class={style.meninggal}>
-                      Meninggal {odp_meninggal}
+                      Meninggal 2
                     </strong>
                   </div>
                 </section>
