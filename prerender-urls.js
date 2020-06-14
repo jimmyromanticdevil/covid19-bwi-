@@ -32,6 +32,8 @@ async function writeToDatabase(responses) {
   return await fetchData(writeOpt);
 }
 
+/** 
+/ To be wiped out
 async function updateToDatabase(responses, todayDate) {
   const checkUpdateOpt = {
     url: `${domain}/rest/case?q={"last_updated":"${todayDate}"}`,
@@ -39,6 +41,7 @@ async function updateToDatabase(responses, todayDate) {
     return_type: "json",
   };
   let resultCheck = await fetchData(checkUpdateOpt);
+  console.log(resultCheck.length)
   if (resultCheck.length > 0) {
     console.log("[*] Update");
     const UpdateOpt = {
@@ -52,39 +55,44 @@ async function updateToDatabase(responses, todayDate) {
   console.log("[*] Update New Data");
   return await writeToDatabase(responses);
 }
-
+*/
 async function readData(responses) {
   let todayDate = new Date().toJSON().slice(0, 10);
-  const caseResult = await updateToDatabase(responses, todayDate);
-  if (caseResult) {
-    const allOpt = {
-      url: `${domain}/rest/case`,
-      method: "GET",
-      return_type: "json",
-    };
-    let getAllCases = await fetchData(allOpt);
-    const yesterday = ((d) => new Date(d.setDate(d.getDate() - 1)))(new Date())
-      .toISOString()
-      .slice(0, 10);
-
-    let yesterdayCase = getAllCases.find(
-      (el) => el.covid_cases.last_updated === yesterday
-    );
-    console.log(yesterdayCase);
-    var newObj = {};
-    for (let [key, value] of Object.entries(responses)) {
-      if (key != "last_updated") {
-        let diff = value - yesterdayCase.covid_cases[key];
-        newObj[`diff_${key}`] = diff
-          ? diff < 0
-            ? `(${diff})`
-            : `(+${diff})`
-          : "";
-      }
+  // API has changed, no need to update. before they just update the date not the data so need to update.
+  // To be wiped out => const caseResult = updateToDatabase(responses, todayDate)
+  const minDate = 2;
+  if (todayDate.toString() === responses.last_updated) {
+    const newCase = await writeToDatabase(responses);
+    if (newCase) {
+      minDate = 1;
     }
-    console.log(newObj);
-    return newObj;
   }
+  const allOpt = {
+    url: `${domain}/rest/case`,
+    method: "GET",
+    return_type: "json",
+  };
+  let getAllCases = await fetchData(allOpt);
+  const yesterday = ((d) => new Date(d.setDate(d.getDate() - minDate)))(new Date())
+    .toISOString()
+    .slice(0, 10);
+  let yesterdayCase = getAllCases.find(
+    (el) => el.covid_cases.last_updated === yesterday
+  );
+  console.log(yesterdayCase);
+  var newObj = {};
+  for (let [key, value] of Object.entries(responses)) {
+    if (key != "last_updated") {
+      let diff = value - yesterdayCase.covid_cases[key];
+      newObj[`diff_${key}`] = diff
+        ? diff < 0
+          ? `(${diff})`
+          : `(+${diff})`
+        : "";
+    }
+  }
+  console.log(newObj);
+  return newObj;
 }
 
 module.exports = async function () {
