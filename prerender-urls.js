@@ -32,8 +32,6 @@ async function writeToDatabase(responses) {
   return await fetchData(writeOpt);
 }
 
-/** 
-/ To be wiped out
 async function updateToDatabase(responses, todayDate) {
   const checkUpdateOpt = {
     url: `${domain}/rest/case?q={"last_updated":"${todayDate}"}`,
@@ -41,7 +39,6 @@ async function updateToDatabase(responses, todayDate) {
     return_type: "json",
   };
   let resultCheck = await fetchData(checkUpdateOpt);
-  console.log(resultCheck.length)
   if (resultCheck.length > 0) {
     console.log("[*] Update");
     const UpdateOpt = {
@@ -51,29 +48,31 @@ async function updateToDatabase(responses, todayDate) {
       return_type: "bol",
     };
     return await fetchData(UpdateOpt);
+  } else {
+    console.log("[*] Update New Data");
+    return await writeToDatabase(responses);
   }
-  console.log("[*] Update New Data");
-  return await writeToDatabase(responses);
 }
-*/
+
 async function readData(responses) {
   let todayDate = new Date().toJSON().slice(0, 10);
-  // API has changed, no need to update. before they just update the date not the data so need to update.
-  // To be wiped out => const caseResult = updateToDatabase(responses, todayDate)
-  const minDate = 2;
+  let minDate = 2;
   if (todayDate.toString() === responses.last_updated) {
-    const newCase = await writeToDatabase(responses);
+    let newCase = await updateToDatabase(responses, todayDate);
     if (newCase) {
       minDate = 1;
     }
   }
+  console.log(minDate);
   const allOpt = {
     url: `${domain}/rest/case`,
     method: "GET",
     return_type: "json",
   };
   let getAllCases = await fetchData(allOpt);
-  const yesterday = ((d) => new Date(d.setDate(d.getDate() - minDate)))(new Date())
+  const yesterday = ((d) => new Date(d.setDate(d.getDate() - minDate)))(
+    new Date()
+  )
     .toISOString()
     .slice(0, 10);
   let yesterdayCase = getAllCases.find(
