@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "preact build --prerenderUrls ./prerender-urls.js --template src/template.html",
+    "deploy-sites": "yarn build && cp -rf .well-known build",
     "serve": "sirv build --cors --single",
     "dev": "preact watch --prerenderUrls ./prerender-urls.js --template src/template.html",
     "lint": "eslint src",
