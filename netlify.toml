@@ -1,5 +1,5 @@
 [build]
+  base = "/"
   command = "yarn build"
   publish = "build"
-  command = "cp -rf .well-known build"
 
