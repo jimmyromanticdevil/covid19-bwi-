@@ -1,22 +1,19 @@
-# testdefault
+# Repository covid19-bwi
 
-## CLI Commands
 
-``` bash
-# install dependencies
-npm install
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6c06b78c-7bf2-4d30-ad21-e73c53ee7d31/deploy-status)](https://app.netlify.com/sites/covid19bwi/deploys)
 
-# serve with hot reload at localhost:8080
-npm run dev
+---
 
-# build for production with minification
-npm run build
+Repositori ini menyimpan perkakas yang digunakan untuk membuat [covid19bwi.netlify.app](https://covid19bwi.netlify.app/).
 
-# test the production build locally
-npm run serve
+Tujuan covid19-bwi adalah untuk menyajikan informasi _terpenting_ soal sebaran COVID-19 di Banyuwangi dengan _secepat-cepatnya_:
 
-# run tests with jest and preact-render-spy 
-npm run test
-```
+* Bobot halaman ringan: pertama load 45.7 KB atau kurang, load kedua dan selanjutnya hanya 140 B.
+* Skor [PageSpeed](https://developers.google.com/speed/pagespeed/insights): 100 dengan kecepatan load 1.8 detik.
+* _Load time_ (menurut [Pingdom](https://tools.pingdom.com/)): 1.7 detik atau kurang
 
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+
+**CATATAN**: Data paparan COVID-19 Banyuwangi diekstrak dari [situs resmi pemerintah banyuwangi](https://corona.banyuwangikab.go.id/).
+
+<hr>
