@@ -32,44 +32,26 @@ async function writeToDatabase(responses) {
   return await fetchData(writeOpt);
 }
 
-async function updateToDatabase(responses, todayDate) {
-  const checkUpdateOpt = {
-    url: `${domain}/rest/case?q={"last_updated":"${todayDate}"}`,
-    method: "GET",
-    return_type: "json",
-  };
-  let resultCheck = await fetchData(checkUpdateOpt);
-  if (resultCheck.length > 0) {
-    console.log("[*] Update");
-    const UpdateOpt = {
-      url: `${domain}/rest/case/${resultCheck[0]._id}`,
-      method: "PUT",
-      body: JSON.stringify({ covid_cases: responses }),
-      return_type: "bol",
-    };
-    return await fetchData(UpdateOpt);
-  } else {
-    console.log("[*] Update New Data");
-    return await writeToDatabase(responses);
-  }
-}
 
 async function readData(responses) {
-  let todayDate = new Date().toJSON().slice(0, 10);
-  let minDate = 2;
-  if (todayDate.toString() === responses.last_updated) {
-    let newCase = await updateToDatabase(responses, todayDate);
-    if (newCase) {
-      minDate = 1;
-    }
-  }
-  console.log(minDate);
   const allOpt = {
     url: `${domain}/rest/case`,
     method: "GET",
     return_type: "json",
   };
   let getAllCases = await fetchData(allOpt);
+  let todayDate = new Date().toJSON().slice(0, 10);
+  let minDate = 2;
+  if (todayDate.toString() === responses.last_updated) {
+    let todayCase =
+      getAllCases.find((el) => el.covid_cases.last_updated === todayDate) ||
+      false;
+    if (!todayCase) {
+      writeToDatabase(responses);
+    }
+    minDate = 1;
+  }
+  console.log(todayDate);
   const yesterday = ((d) => new Date(d.setDate(d.getDate() - minDate)))(
     new Date()
   )
