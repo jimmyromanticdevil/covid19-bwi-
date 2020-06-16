@@ -8,8 +8,8 @@ const Home = (props) => {
   return (
     <div class={style.home}>
       <p>Data terkini COVID-19 di Banyuwangi versi cepat & hemat kuota.</p>
-      <ContentStyle items={props.value} />
-      <Links/>
+      <ContentStyle items={props.value.datacovid} />
+      <Links items={props.value.datalinks}/>
       <About/>
     </div>
   );

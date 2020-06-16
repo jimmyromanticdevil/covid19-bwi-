@@ -32,7 +32,6 @@ async function writeToDatabase(responses) {
   return await fetchData(writeOpt);
 }
 
-
 async function readData(responses) {
   const allOpt = {
     url: `${domain}/rest/case`,
@@ -76,16 +75,35 @@ async function readData(responses) {
   return newObj;
 }
 
+async function getAllLinks() {
+  const allOpt = {
+    url: `${domain}/rest/news`,
+    method: "GET",
+    return_type: "json",
+  };
+  let links = await fetchData(allOpt);
+  let pemda = links.filter((el) => el.type === "pemda");
+  let sop = links.filter((el) => el.type === "sop");
+  let other = links.filter((el) => el.type === "other");
+  return {
+    pemda,
+    sop,
+    other,
+  };
+}
+
 module.exports = async function () {
   const pages = [];
   const response = await fetch(coronaBwiUrl);
   let resp = await response.json();
   let result = await readData(resp.data);
   let data = { ...result, ...resp.data };
+  let itemLinks = await getAllLinks();
   pages.push({
     url: "/",
     title: "Data terkini COVID-19 di Banyuwangi versi cepat & hemat kuota.",
-    data: data,
+    datacovid: data,
+    datalinks: itemLinks,
   });
   return pages;
 };

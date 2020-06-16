@@ -19,7 +19,7 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
-					<Home path="/" value={this.props.CLI_DATA.preRenderData.data}/>
+					<Home path="/" value={this.props.CLI_DATA.preRenderData}/>
 				</Router>
 			</div>
 		);
