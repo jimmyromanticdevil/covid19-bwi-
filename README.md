@@ -1,5 +1,6 @@
 # Repository covid19-bwi
 
+## This project no longer maintained, due to the inconsistent data update from government API and I use zapier which only curl my API one times in a day. So when government postponed their update then the data will be missed.    
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6c06b78c-7bf2-4d30-ad21-e73c53ee7d31/deploy-status)](https://app.netlify.com/sites/covid19bwi/deploys)
 
