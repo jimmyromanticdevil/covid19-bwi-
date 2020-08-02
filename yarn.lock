@@ -1497,11 +1497,6 @@
     kleur "^3.0.3"
     loader-utils "^1.1.0"
 
-"@preact/prerender-data-provider@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@preact/prerender-data-provider/-/prerender-data-provider-0.0.1.tgz#6064d2a7bf1765386fc9f0a43d2ada0866159250"
-  integrity sha512-ccgbdQHD0k3pIubybQ9HeGl7EAgebnFU7Lwq9OmeyjMTFm2HHCKKcbREHldDsMdYOtOLznB37CY03wmwrHYxNw==
-
 "@prefresh/core@0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-0.6.0.tgz#b7801ad3d16de9d21ed0824db6c85707f93cf93c"
@@ -3950,9 +3945,9 @@ electron-to-chromium@^1.3.413:
   integrity sha512-smevlzzMNz3vMz6OLeeCq5HRWEj2AcgccNPYnAx4Usx0IOciq9DU36RJcICcS09hXoY7t7deRfVYKD14IrGb9A==
 
 elliptic@^6.0.0, elliptic@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
-  integrity sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
+  integrity sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -8204,6 +8199,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+preact-cli-plugin-netlify@^1.5.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/preact-cli-plugin-netlify/-/preact-cli-plugin-netlify-1.6.0.tgz#34e0e4c513e280b53b9a24b186f2a3e19cc5d9dd"
+  integrity sha512-GO9V1/LCCiIt1AhDxWeqGJm6NLCCQmLDkgWH+32SER89n6nKHXHSaCIs5HHSVqOrf9kX8CYqUofp5A8ChZSBqg==
+
 preact-cli@^3.0.0-rc.6:
   version "3.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/preact-cli/-/preact-cli-3.0.0-rc.14.tgz#79d3738fc36b0b6bea92f7a432fbf24880d69b7c"
@@ -8350,13 +8350,6 @@ preact-render-to-string@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-4.1.0.tgz#70d98a8385cb86558366c558aad7311ebecb881d"
   integrity sha512-FlFBJRxo8z4cp6VsDmeYjIEx4ZK2clFJnKIvIj8K1IQCRm7ZgJ/SZ1+BotT86/Nc+V1pNtFabHoUi6gpjx5Pug==
-  dependencies:
-    pretty-format "^3.8.0"
-
-preact-render-to-string@^5.1.4:
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.9.tgz#201d7bb4c20899b68f5cbda705d36c45305f7efb"
-  integrity sha512-fuuZP/nBcsYvfI5Mjs8R0wVA8jPbnAsr/UQ5Y5/p9Qg4HAz9vSVJ03iejBVw4YGV8jkUCJv0++k4zwp6qjx2Kg==
   dependencies:
     pretty-format "^3.8.0"
 
