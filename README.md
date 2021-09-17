@@ -1,3 +1,9 @@
+![100895517_699523020827199_2340940776479463604_n (1)](https://user-images.githubusercontent.com/935878/133728613-58b3f42c-6485-42d5-8f29-9e52eddf4598.jpg)
+
+
+
+https://user-images.githubusercontent.com/935878/133728635-d93e1488-c52e-42f5-820e-fe202080f5b2.mp4
+
 # Repository covid19-bwi
 
 ## This project no longer maintained, due to the inconsistent data update from government API and I use zapier which only curl my API one times in a day. So when government postponed their update then the data will be missed.    
