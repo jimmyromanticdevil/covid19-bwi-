@@ -1497,11 +1497,6 @@
     kleur "^3.0.3"
     loader-utils "^1.1.0"
 
-"@preact/prerender-data-provider@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@preact/prerender-data-provider/-/prerender-data-provider-0.0.1.tgz#6064d2a7bf1765386fc9f0a43d2ada0866159250"
-  integrity sha512-ccgbdQHD0k3pIubybQ9HeGl7EAgebnFU7Lwq9OmeyjMTFm2HHCKKcbREHldDsMdYOtOLznB37CY03wmwrHYxNw==
-
 "@prefresh/core@0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-0.6.0.tgz#b7801ad3d16de9d21ed0824db6c85707f93cf93c"
@@ -7189,9 +7184,11 @@ no-case@^2.2.0:
     lower-case "^1.1.1"
 
 node-fetch@^2.2.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-forge@0.9.0:
   version "0.9.0"
@@ -8204,6 +8201,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+preact-cli-plugin-netlify@^1.5.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/preact-cli-plugin-netlify/-/preact-cli-plugin-netlify-1.6.0.tgz#34e0e4c513e280b53b9a24b186f2a3e19cc5d9dd"
+  integrity sha512-GO9V1/LCCiIt1AhDxWeqGJm6NLCCQmLDkgWH+32SER89n6nKHXHSaCIs5HHSVqOrf9kX8CYqUofp5A8ChZSBqg==
+
 preact-cli@^3.0.0-rc.6:
   version "3.0.0-rc.14"
   resolved "https://registry.yarnpkg.com/preact-cli/-/preact-cli-3.0.0-rc.14.tgz#79d3738fc36b0b6bea92f7a432fbf24880d69b7c"
@@ -8350,13 +8352,6 @@ preact-render-to-string@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-4.1.0.tgz#70d98a8385cb86558366c558aad7311ebecb881d"
   integrity sha512-FlFBJRxo8z4cp6VsDmeYjIEx4ZK2clFJnKIvIj8K1IQCRm7ZgJ/SZ1+BotT86/Nc+V1pNtFabHoUi6gpjx5Pug==
-  dependencies:
-    pretty-format "^3.8.0"
-
-preact-render-to-string@^5.1.4:
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.9.tgz#201d7bb4c20899b68f5cbda705d36c45305f7efb"
-  integrity sha512-fuuZP/nBcsYvfI5Mjs8R0wVA8jPbnAsr/UQ5Y5/p9Qg4HAz9vSVJ03iejBVw4YGV8jkUCJv0++k4zwp6qjx2Kg==
   dependencies:
     pretty-format "^3.8.0"
 
@@ -10131,6 +10126,11 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
+tr46@~0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+  integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
+
 tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
@@ -10553,6 +10553,11 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
+webidl-conversions@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
+  integrity sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
@@ -10721,6 +10726,14 @@ whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0, whatwg-mimetype@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz#3d4b1e0312d2079879f826aff18dbeeca5960fbf"
   integrity sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==
+
+whatwg-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
+  integrity sha1-lmRU6HZUYuN2RNNib2dCzotwll0=
+  dependencies:
+    tr46 "~0.0.3"
+    webidl-conversions "^3.0.0"
 
 whatwg-url@^6.4.1:
   version "6.5.0"
